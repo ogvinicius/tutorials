@@ -36,14 +36,14 @@ for task in tasks:
 
     org_node = KubernetesPodOperator(
         namespace='default',
-        image="localhost:5000/my-python",
+        image="vini-my-python",
         cmds=["python", "-c"],
         arguments=["print('HELLO')"],
         labels={"foo": "bar"},
         image_pull_policy="Always",
         name=task,
         task_id=task,
-        is_delete_operator_pod=False,
+        is_delete_operator_pod=True,
         get_logs=True,
         dag=dag
     )
