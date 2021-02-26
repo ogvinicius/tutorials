@@ -36,7 +36,7 @@ for task in tasks:
 
     org_node = KubernetesPodOperator(
         namespace='default',
-        image="vini-my-python",
+        image="localhost:5000/vini-my-python",
         cmds=["python", "-c"],
         arguments=["print('HELLO')"],
         labels={"foo": "bar"},
