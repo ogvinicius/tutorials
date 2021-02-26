@@ -36,7 +36,7 @@ for task in tasks:
 
     org_node = KubernetesPodOperator(
         namespace='default',
-        image="hello-world",
+        image="localhost:5000/my-hello",
         cmds=["python", "-c"],
         arguments=["print('HELLO')"],
         labels={"foo": "bar"},
